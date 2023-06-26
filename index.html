@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+  <div class="container" id="quiz-container">
+    <header>
+<section id="top">
+        <div id="permanent-link">
+            <p id="permanent-link-text">View High Socres</p>
+          </div>
+
+          <div id="timer">Time: <span id="time">0</span></div>
+</section>
+
+      
+    </header>
+
+    <section id="tophead" style="display: block;">
+
+        <h1>Coding Quiz Challenge</h1>
+      <div id="score">Score: <span id="user-score">0</span></div>
+
+    </section>
+
+    <main id="main-section">
+      <div id="question-container">
+        <h2 id="question"></h2>
+        <ul id="options"></ul>
+      </div>
+
+      <div id="feedback-container">
+        <p id="feedback"></p>
+      </div>
+
+      <div id="button-container">
+        <button id="start-button">Start Quiz</button>
+        <button id="submit-button" style="display: none;">Submit</button>
+      </div>
+
+      <div id="initials-container" style="display: none;">
+        <form id="initials-form">
+          <label for="initials">Enter Your Initials:</label>
+          <input type="text" id="initials" name="initials" maxlength="3" required>
+          <button type="submit" id="submit-score-button">Save Score</button>
+        </form>
+      </div>
+
+
+    </main>
+
+    <div id="scores-container" style="display: none;">
+        <h2>High Scores</h2>
+        <ol id="scores-list"></ol>
+        <div id="scores-buttons">
+          <button id="clear-scores-button">Clear Scores</button>
+          <button id="go-back-button">Go Back</button>
+        </div>
+
+
+
+      </div>
+
+  </div>
+
+  <script src="./assets/script.js"></script>
+</body>
+
+</html>
