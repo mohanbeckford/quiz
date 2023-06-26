@@ -1,0 +1,207 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#tophead {
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+
+
+#top {
+  text-align: center;
+  margin-bottom: 80px;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  color: #333;
+  border-bottom: solid 1px teal;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: teal;
+}
+
+
+#score {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#timer{
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+main {
+  background-color: teal;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#question-container {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#options {
+  list-style: none;
+  padding: 0;
+}
+
+#options li {
+  margin-bottom: 10px;
+}
+
+#feedback-container {
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+}
+
+#feedback {
+font-weight: bold;
+margin-top: 10px;
+color: #fff;
+margin-top: 30px;
+}
+
+#button-container {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#initials-container {
+  text-align: center;
+}
+
+#initials-form label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#initials-form input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#initials-form button[type="submit"] {
+  margin-top: 10px;
+}
+
+#scores-container {
+  margin-top: 20px;
+  justify-content: center;
+  text-align: left;
+  width: auto;
+}
+
+#scores-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#scores-container ol {
+  padding: 15px;
+  list-style: decimal;
+  margin-bottom: 10px;
+  background-color: teal;
+  text-align: left;
+  width: 250px;
+}
+
+#scores-container ol li {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+#scores-container #scores-buttons {
+  text-align: center;
+  margin-top: 10px;
+  float: left;
+}
+
+#scores-container #clear-scores-button {
+  margin-right: 10px;
+}
+
+/* Permanent link styling */
+#permanent-link {
+  margin-top: 20px;
+}
+
+#permanent-link-text {
+  font-size: 12px;
+  white-space: pre-line;
+  margin-top: -20px;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  #timer,
+  #score {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  #initials-form label {
+    font-size: 16px;
+  }
+
+  #initials-form input[type="text"] {
+    font-size: 14px;
+  }
+}
