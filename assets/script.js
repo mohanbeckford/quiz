@@ -28,7 +28,7 @@ var quizQuestions = [
 var startButton = document.getElementById("start-button");
 var questionElement = document.getElementById("question");
 var optionsElement = document.getElementById("options");
-var feedbackElement = document.getElementById("feedback-container");
+var feedbackElement = document.getElementById("feedback");
 var timerElement = document.getElementById("time");
 var scoreElement = document.getElementById("user-score");
 var submitButton = document.getElementById("submit-button");
@@ -39,7 +39,6 @@ var scoresContainer = document.getElementById("scores-container");
 var scoresList = document.getElementById("scores-list");
 var clearScoresButton = document.getElementById("clear-scores-button");
 var goBackButton = document.getElementById("go-back-button");
-// var scoresButton = document.getElementById("scores-buttons");
 var mainSection = document.getElementById("main-section");
 var submitScoreButton = document.getElementById("submit-score-button");
 var initialsContainer = document.getElementById("initials-container");
@@ -48,7 +47,6 @@ var quizContainer = document.getElementById("quiz-container");
 
 // Event listeners
 startButton.addEventListener("click", startQuiz);
-// document.getElementById("tophead").addEventListener("click", showPermanentLink); //THIS IS NOT REALLY NECESSARY
 document.getElementById("permanent-link-text").addEventListener("click", showPermanentLink);
 
 
@@ -64,7 +62,6 @@ var scoresArray = [];
 //START QUIZ
 
 function startQuiz() {
-  // initialsContainer.style.display = "block";
  topHead.style.display = "block";
   startButton.style.display = "none";
   submitButton.style.display = "block";
@@ -97,11 +94,11 @@ function checkAnswer(event) {
   var correctIndex = quizQuestions[currentQuestionIndex].correctAnswer;
 
   if (selectedIndex === correctIndex) {
-    showFeedback("Correct!", "green");
+    showFeedback("Correct!");
     score++;
     scoreElement.textContent = score;
   } else {
-    showFeedback("Wrong!", "red");
+    showFeedback("Wrong!");
     timeLeft -= 10;
     timerElement.textContent = timeLeft;
   }
@@ -113,14 +110,21 @@ function checkAnswer(event) {
   } else {
     endQuiz();
   }
+
+  // Hide feedback after 2 seconds
+  setTimeout(hideFeedback, 2000);
 }
 
-function showFeedback(message, color) {
+function showFeedback(message) {
   var feedback = document.getElementById("feedback-container");
   feedback.textContent = message;
-  feedback.style.color = color;
+  feedback.style.color = "black";
 }
 
+function hideFeedback() {
+  var feedback = document.getElementById("feedback-container");
+  feedback.textContent = "";
+}
 
 
 function endQuiz() {
@@ -265,4 +269,8 @@ function goBack() {
 
   scoresContainer.style.display = "none";
   mainSection.style.display = "block";
+
+  //RESETTIGN THE QUIZ
+  showQuestion();
+  startTimer();
 }
