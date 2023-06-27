@@ -88,6 +88,9 @@ font-weight: bold;
 margin-top: 10px;
 color: #fff;
 margin-top: 30px;
+display: block;
+  color: red;
+  z-index: 999999;
 }
 
 #button-container {

@@ -28,7 +28,7 @@ var quizQuestions = [
 var startButton = document.getElementById("start-button");
 var questionElement = document.getElementById("question");
 var optionsElement = document.getElementById("options");
-var feedbackElement = document.getElementById("feedback");
+var feedbackElement = document.getElementById("feedback-container");
 var timerElement = document.getElementById("time");
 var scoreElement = document.getElementById("user-score");
 var submitButton = document.getElementById("submit-button");
@@ -72,6 +72,7 @@ function startQuiz() {
   startTimer();
 }
 
+
 function showQuestion() {
   var currentQuestion = quizQuestions[currentQuestionIndex];
   questionElement.textContent = currentQuestion.question;
@@ -85,20 +86,24 @@ function showQuestion() {
     option.addEventListener("click", checkAnswer);
     optionsElement.appendChild(option);
   }
+
 }
+
+//CHECK ANSWER
 
 function checkAnswer(event) {
   var selectedOption = event.target;
-  var selectedIndex = selectedOption.getAttribute("data-index");
+  var selectedIndex = parseInt(selectedOption.getAttribute("data-index"));
   var correctIndex = quizQuestions[currentQuestionIndex].correctAnswer;
 
-  if (selectedIndex == correctIndex) {
-    feedbackElement.textContent = "Correct!";
+  if (selectedIndex === correctIndex) {
+    showFeedback("Correct!", "green");
     score++;
     scoreElement.textContent = score;
   } else {
-    feedbackElement.textContent = "Wrong!";
+    showFeedback("Wrong!", "red");
     timeLeft -= 10;
+    timerElement.textContent = timeLeft;
   }
 
   currentQuestionIndex++;
@@ -110,12 +115,21 @@ function checkAnswer(event) {
   }
 }
 
+function showFeedback(message, color) {
+  var feedback = document.getElementById("feedback-container");
+  feedback.textContent = message;
+  feedback.style.color = color;
+}
+
+
+
 function endQuiz() {
   clearInterval(timerInterval);
   timerElement.textContent = "0";
   questionElement.textContent = "All done!";
   optionsElement.innerHTML = "";
   feedbackElement.textContent = "";
+
 
   var finalScoreMessage = document.createElement("p");
   finalScoreMessage.textContent = "Your final score is: ";
